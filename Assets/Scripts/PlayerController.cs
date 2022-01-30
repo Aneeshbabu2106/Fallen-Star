@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
-        catchLight = Input.GetKey(KeyCode.E);
+        catchLight = Input.GetKeyDown(KeyCode.E);
 
         //flipping
         scale = transform.localScale;
@@ -44,6 +44,8 @@ public class PlayerController : MonoBehaviour
 
     void playerLightCatch()
     {
+        //Debug.Log("called");
+        lightCatchingControllerObj.startLightMove(transform.position);
         lightCatchingControllerObj.LightCatch();
 
     }
